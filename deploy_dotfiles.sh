@@ -19,3 +19,6 @@ function link_dotfile () {
 
 # Deploy .tmux.conf
 link_dotfile ".tmux.conf"
+
+# Deploy .zshrc
+link_dotfile ".zshrc"
