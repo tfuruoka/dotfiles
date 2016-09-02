@@ -22,3 +22,6 @@ link_dotfile ".tmux.conf"
 
 # Deploy .zshrc
 link_dotfile ".zshrc"
+
+# Deploy .vimrc
+link_dotfile ".vimrc"

@@ -7,14 +7,14 @@ export LANG=utf-8
 export LESSCHARSET=utf-8
 
 ## Auto completion by auto-fu.zsh
-if [ -f ~/.zsh/auto-fu.zsh ]; then
-    source ~/.zsh/auto-fu.zsh
-    function zle-line-init () {
-        auto-fu-init
-    }
-    zle -N zle-line-init
-    zstyle ':completion:*' completer _oldlist _complete
-fi
+#if [ -f ~/.zsh/auto-fu.zsh ]; then
+#    source ~/.zsh/auto-fu.zsh
+#    function zle-line-init () {
+#        auto-fu-init
+#    }
+#    zle -N zle-line-init
+#    zstyle ':completion:*' completer _oldlist _complete
+#fi
 
 ## Emacs keybind
 bindkey -e
@@ -155,20 +155,6 @@ function tmux_automatically_attach_session()
 }
 
 tmux_automatically_attach_session
-
-## Logging during SSH
-function ssh_tmux() {
-  tmux  set-option default-terminal "screen" \; \
-        run-shell	 "exec ssh $(echo $@)" \; \
-        run-shell        "mkdir -p $HOME/.tmuxlog/#W/$(date +%Y-%m/%d)" \; \
-        pipe-pane        "cat >> $HOME/.tmuxlog/#W/$(date +%Y-%m/%d/%H%M%S.log)" \; \
-        display-message  "Started logging to $HOME/.tmuxlog/#W/$(date +%Y-%m/%d/%H%M%S.log)"
-}
-#        new-window -n $(echo $@) "exec ssh $(echo $@)" \; \
-
-if [[ $TERM = screen ]] || [[ $TERM = screen-256color ]] ; then
-  alias ssh=ssh_tmux
-fi
 
 #------------------------------
 # Other settings
