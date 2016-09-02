@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 function link_dotfile () {
     conffile=$1
