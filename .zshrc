@@ -36,6 +36,9 @@ SAVEHIST=10000
 setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history # share command history data
 
+## Activate the bash-style comments
+setopt interactivecomments
+
 # ------------------------------
 # Git Settings
 # ------------------------------
